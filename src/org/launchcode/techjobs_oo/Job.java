@@ -22,19 +22,24 @@ public class Job {
         nextId++;
     }
 
-    public Job(String name) {
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
-        this.employer = new Employer();
-        this.location = new Location();
-        this.positionType = new PositionType();
-        this.coreCompetency = new CoreCompetency();
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
-    // Custom equals and hashCode methods:
+    // Custom toString, equals, and hashCode methods:
+
+    @Override
+    public String toString() {
+        return value;
+    }
 
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.
