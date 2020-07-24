@@ -69,7 +69,7 @@ public class Job {
                 + "\nEmployer:   " + jobEmployer
                 + "\nLocation:   " + jobLocation
                 + "\nPosition Type:   " + jobPositionType
-                + "\nCore Competency:   " + jobCoreCompetency;
+                + "\nCore Competency:   " + jobCoreCompetency + "\n\n";
     }
 
     @Override
