@@ -36,10 +36,41 @@ public class Job {
 
     // Custom toString, equals, and hashCode methods:
 
-//    @Override
-//    public String toString() {
-//        return value;
-//    }
+    @Override
+    public String toString() {
+        // Checking if Job object is empty (ie. No arg constructor)
+        if (this.name == null) return "OOPS! This job does not seem to exist.";
+
+        // Declaring variables needed for final return string
+        int jobId = this.getId();
+        String jobName = this.getName();
+        String jobEmployer = this.getEmployer().getValue();
+        String jobLocation = this.getLocation().getValue();
+        String jobPositionType = this.getPositionType().getValue();
+        String jobCoreCompetency = this.getCoreCompetency().getValue();
+
+//        // Checking if Job object has name but NoArg Constructors for all other Objects
+//        if (jobEmployer == null
+//                && jobLocation == null
+//                && jobPositionType == null
+//                && jobCoreCompetency == null) return "OOPS! This job does not seem to exist.
+//                Name exist though so that's something.";
+
+        // Changing variables to different string if no data is available
+        if (jobName == null) jobName = "Data not available";
+        if (jobEmployer == null) jobEmployer = "Data not available";
+        if (jobLocation == null) jobLocation = "Data not available";
+        if (jobPositionType == null) jobPositionType = "Data not available";
+        if (jobCoreCompetency == null) jobCoreCompetency = "Data not available";
+
+        // Building the string from data pulled from all fields
+        return "ID:   " + jobId
+                + "\nName:   " + jobName
+                + "\nEmployer:   " + jobEmployer
+                + "\nLocation:   " + jobLocation
+                + "\nPosition Type:   " + jobPositionType
+                + "\nCore Competency:   " + jobCoreCompetency;
+    }
 
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.
